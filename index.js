@@ -76,7 +76,8 @@ function wkhtmltopdf(input, options, callback) {
   
   child.once('error', handleError);
   child.stderr.once('data', function(err) {
-    handleError(new Error((err || '').toString().trim()));
+    console.log(err);
+    // handleError(new Error((err || '').toString().trim()));
   });
   
   // write input to stdin if it isn't a url
